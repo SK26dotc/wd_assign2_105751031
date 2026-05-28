@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blossom Table | Restaurants</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
 </head>
 
 <body>
+
+    <!-- Header section: displays the logo and website title -->
 
     <header>
         <img src="images/lillogo.jpg" alt="Blossom Table logo" class="logo">
@@ -17,6 +19,8 @@
             <p>Restaurant discovery and reservations.</p>
         </div>
     </header>
+
+    <!-- Navigation section: links to all main pages and highlights the current page -->
 
     <nav aria-label="Main navigation">
         <a href="index.html">Home</a>
@@ -27,12 +31,20 @@
         <a href="bill.html">Bill</a>
     </nav>
 
+    <!-- Main content section: contains the restaurant listing page content -->
+
     <main>
+
+        <!-- Restaurant collection section: introduces the list of Melbourne restaurants -->
+
         <section>
             <h2 class="section-title">Aesthetic Melbourne Restaurant Collection</h2>
-            <p class="center">Discover pretty Melbourne cafés and restaurants for brunch dates, family meals, catch-ups and special occasions.</p>
+            <p class="center">Discover pretty Melbourne cafes and restaurants for brunch dates, family meals, catch-ups and special occasions.</p>
             <p class="note center">Prices are approximate and may vary by season, menu changes or restaurant updates.</p>
             <div class="grid two">
+
+        <!-- Restaurant cards section: displays each restaurant with details and reserve links -->
+
                 <article class="card restaurant-card">
                     <img src="images/restaurant1.jpeg" alt="One of the delicious dishes at Moby 3143">
                     <h3>Moby 3143</h3>
@@ -49,7 +61,7 @@
                     <p><span class="tag">Floral Asian brunch</span><span class="tag">Vegetarian options</span><span class="tag">Medium budget</span></p>
                     <p>Flovie Florist Cafe is a florist cafe in Carlton with flowers, warm interiors and Asian-fusion brunch. The space feels soft, personal and decorative, making it a lovely choice for coffee dates, quiet catch-ups and relaxed brunch plans. It is ideal for anyone looking for a calm and pretty place without feeling too formal.</p>
                     <p><strong>Menu highlights:</strong> Chilli Scrambled Eggs $24, Matcha Hotcake $25, Iced Strawberry Matcha $9</p>
-                    <p><strong>Best for:</strong> Floral brunch, coffee dates, friends’ catch-ups, calm aesthetic dining</p>
+                    <p><strong>Best for:</strong> Floral brunch, coffee dates, friends catch-ups, calm aesthetic dining</p>
                     <p class="price-line">Average price: $35 per person | Deposit: $10</p>
                     <a class="button" href="reservation.html?restaurant=flovie">Reserve</a>
                 </article>
@@ -97,9 +109,13 @@
         </section>
     </main>
 
+    <!-- Footer section: contains copyright and closing message -->
+
     <footer>
         <p>&copy; 2024 Blossom Table. All rights reserved.</p>
         <p>Hope you find a good dining spot!</p>
     </footer>
 
 </body>
+</html>
+
