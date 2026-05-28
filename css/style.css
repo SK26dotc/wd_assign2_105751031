@@ -156,3 +156,13 @@ main {
   margin-bottom: 6px;
   color: #7f5836;
 }
+
+/* Footer */
+footer {
+  margin-top: 30px;
+  padding: 18px;
+  background: #443025;
+  color: #fff6f2;
+  text-align: center;
+}
+
