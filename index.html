@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blossom Table | Home</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
 </head>
 <body>
+
+    <!-- Header section: displays the logo and website title -->
+
     <header>
         <img src="images/lillogo.jpg" alt="Blossom Table logo" class="logo">
         <div>
@@ -14,6 +18,9 @@
             <p>Restaurant discovery and reservations.</p>
         </div>
     </header>
+
+    <!-- Navigation section: links to all main pages and highlights the current page -->
+
     <nav aria-label="Main navigation">
         <a class="active" href="index.html">Home</a>
         <a href="restaurants.html">Restaurants</a>
@@ -23,5 +30,33 @@
         <a href="bill.html">Bill</a>
     </nav>
 
+    <!-- Main content section: contains the home page introduction and feature summary -->
 
+<main>
+
+    <!-- Introduction section: introduces the purpose of the website (restaurant discovery) -->
+
+    <section class="intro-section">
+            <div>
+                <p class="intro-subtitle">Cafe finder</p>
+                <h2>Find pretty Melbourne restaurants that match your mood.</h2>
+                <p>Blossom Table helps students, couples, families, tourists and professionals browse real restaurant examples, compare prices, receive recommendations and reserve a table with a clear deposit option.</p>
+                <a class="button" href="restaurants.html">Browse Restaurants</a>
+                <a class="button light" href="recommend.html">Get Recommendation</a>
+            </div>
+            <img src="images/logo.jpg" alt="Pink and brown cafe style illustration">
+        </section>
+
+        <!-- Features section: highlights the main features of the platform (discovery, recommendation, reservations) -->
+
+        <section>
+            <h2 class="section-title">What the platform offers</h2>
+            <div class="grid three">
+                <article class="card"><h3>Discovery</h3><p>View cuisine, dishes, price range, deposit amount and short descriptions for each restaurant.</p></article>
+                <article class="card"><h3>Recommendation</h3><p>Choose diet, budget and dining purpose to receive a simple rule-based restaurant match.</p></article>
+                <article class="card"><h3>Reservations</h3><p>Book using a form with date checks, payment choice, voucher/card display and deposit updates.</p></article>
+            </div>
+        </section>
+
+    </main>
 </body>
