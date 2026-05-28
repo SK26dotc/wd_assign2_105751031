@@ -21,4 +21,52 @@ h3 {
 
 /* Header and navigation */
 
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px;
+  background: linear-gradient(135deg, #443025, #7f5836);
+  color: #fff6f2;
+  text-align: left;
+}
+
+header p {
+  margin: 4px 0;
+}
+
+.logo {
+  width: 80px;
+  border-radius: 24px;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 12px;
+  background: #fff6f2;
+  border-bottom: 3px solid #ec9c9d;
+}
+
+nav a {
+  color: #443025;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 15px;
+  border-radius: 20px;
+}
+
+nav a:hover,
+nav a.active {
+  background: #ec9c9d;
+  color: #443025;
+}
+
+
 
