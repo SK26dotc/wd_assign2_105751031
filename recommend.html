@@ -34,9 +34,14 @@
 
     <main>
 
+        <!-- Recommendation section: lets users choose their preferences and get a restaurant match -->
+
         <section class="form-page">
             <h2>Restaurant Recommendation</h2>
             <p>Tell us what kind of dining experience you are looking for, and we will suggest a restaurant that matches your preferences.</p>
+
+            <!-- Recommendation form: collects diet, budget and dining purpose choices -->
+            
             <form id="recommendForm">
                 <label for="diet">Dietary preference</label>
                 <select id="diet" required>
@@ -61,6 +66,9 @@
                 </select>
                 <button class="button" type="submit">Show Match</button>
             </form>
+
+            <!-- Recommendation result section: displays the matched restaurant after the form is submitted -->
+             
             <div id="recommendResult" class="result-box" aria-live="polite">Your recommendation will appear here.</div>
         </section>
     </main>

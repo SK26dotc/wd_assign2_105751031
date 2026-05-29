@@ -85,7 +85,7 @@ main {
   background: radial-gradient(circle at top left, #fff 0, #fff6f2 45%, #f2cfca 100%);
 }
 
-.card {
+.card, form, .result-box {
   background: #fff6f2;
   border: 1px solid rgba(127, 88, 54, 0.16);
   border-radius: 28px;
@@ -191,6 +191,38 @@ main {
   font-size: 0.9rem;
 }
 
+/* Forms */
+.form-page {
+  max-width: 760px;
+  margin: auto;
+}
+
+form {
+  padding: 24px;
+}
+
+label {
+  display: block;
+  margin-top: 13px;
+  font-weight: bold;
+}
+
+select {
+  width: 100%;
+  margin-top: 5px;
+  padding: 10px;
+  background: white;
+  border: 2px solid #e8c7b0;
+  border-radius: 12px;
+  font-size: 1rem;
+}
+
+.result-box {
+  margin-top: 18px;
+  padding: 16px;
+  border-left: 7px solid #7f5836;
+}
+
 /* Footer */
 footer {
   margin-top: 30px;
@@ -199,4 +231,5 @@ footer {
   color: #fff6f2;
   text-align: center;
 }
+
 
