@@ -235,3 +235,20 @@ if ($("reservationForm")) {
         }
     });
 }
+
+// Updates the estimated bill on the billing page when options are changed
+
+if ($("billForm")) {
+    function updateBill() {
+        const place = getRestaurant($("billRestaurant").value);
+        const guests = Number($("billGuests").value);
+        const desserts = Number($("dessertCount").value);
+        const drinks = Number($("drinkCount").value);
+        const total = (place.price * guests) + (desserts * 9) + (drinks * 6);
+
+        $("billResult").textContent = "Estimated total: $" + total.toFixed(2);
+    }
+
+    $("billForm").addEventListener("input", updateBill);
+    updateBill();
+}
