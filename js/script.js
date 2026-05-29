@@ -35,6 +35,12 @@ function isEmail(value) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
+// Finds one restaurant from the restaurant list using its id
+
+function getRestaurant(id) {
+    return restaurants.find(place => place.id === id);
+}
+
 // Runs this code only on the recommendation page
 
 if ($("recommendForm")) {
@@ -127,6 +133,101 @@ if ($("registerForm")) {
         if ($("country").value === "") {
             showError("countryError", "Select a country/region.");
             valid = false;
+        }
+
+        if (!valid) {
+            event.preventDefault();
+        }
+    });
+}
+
+// Updates the deposit amount when a restaurant is selected on the reservation page
+
+if ($("restaurantSelect")) {
+    const pageInfo = new URLSearchParams(location.search);
+    if (pageInfo.get("restaurant")) $("restaurantSelect").value = pageInfo.get("restaurant");
+
+    function updateDeposit() {
+        const place = getRestaurant($("restaurantSelect").value);
+        $("depositAmount").value = place ? "$" + place.deposit : "";
+    }
+
+    $("restaurantSelect").addEventListener("change", updateDeposit);
+    updateDeposit();
+}
+
+// Shows voucher or card details depending on the payment method
+
+if ($("paymentMethod")) {
+    function showPaymentFields() {
+        $("voucherBox").classList.add("hidden");
+        $("cardBox").classList.add("hidden");
+
+        if ($("paymentMethod").value === "Voucher") $("voucherBox").classList.remove("hidden");
+        if ($("paymentMethod").value === "Online") $("cardBox").classList.remove("hidden");
+    }
+
+    $("paymentMethod").addEventListener("change", showPaymentFields);
+    showPaymentFields();
+}
+
+// Copies reservation email into billing email when checkbox is selected
+if ($("sameEmail")) {
+    $("sameEmail").addEventListener("change", function() {
+        if ($("sameEmail").checked) {
+            $("billingEmail").value = $("resEmail").value;
+        }
+    });
+}
+
+// Checks the reservation form before it is submitted
+if ($("reservationForm")) {
+    $("reservationForm").addEventListener("submit", function(event) {
+        clearErrors();
+        let valid = true;
+
+        const method = $("paymentMethod").value;
+        const card = $("cardNumber").value.trim();
+        const cardType = $("cardType").value;
+
+        if ($("fullName").value.trim() === "") {
+            showError("fullNameError", "Full name is required.");
+            valid = false;
+        }
+
+        if (!isEmail($("resEmail").value.trim())) {
+            showError("resEmailError", "Enter a valid email.");
+            valid = false;
+        }
+
+        if (!/^\d{10,}$/.test($("resPhone").value.trim())) {
+            showError("resPhoneError", "Phone needs at least 10 digits.");
+            valid = false;
+        }
+
+        if ($("dateTime").value === "" || new Date($("dateTime").value) < new Date()) {
+            showError("dateTimeError", "Choose a future date/time.");
+            valid = false;
+        }
+
+        if (Number($("people").value) <= 0) {
+            showError("peopleError", "People must be greater than 0.");
+            valid = false;
+        }
+
+        if (method === "") {
+            showError("paymentError", "Choose a deposit method.");
+            valid = false;
+        }
+
+        if (method === "Online") {
+            const requiredLength = cardType === "Amex" ? 15 : 16;
+            const cardRule = new RegExp("^\\d{" + requiredLength + "}$");
+
+            if (!cardRule.test(card)) {
+                showError("cardError", cardType + " must be " + requiredLength + " digits.");
+                valid = false;
+            }
         }
 
         if (!valid) {
