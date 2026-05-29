@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blossom Table | Recommend</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
 </head>
+
 <body>
+    <!-- Header section: displays the logo and website title -->
+
     <header>
         <img src="images/lillogo.jpg" alt="Blossom Table logo" class="logo">
         <div>
@@ -15,6 +18,9 @@
             <p>Restaurant discovery and reservations.</p>
         </div>
     </header>
+
+    <!-- Navigation section: links to all main pages and highlights the current page -->
+
     <nav aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="restaurants.html">Restaurants</a>
@@ -23,9 +29,44 @@
         <a href="reservation.html">Reserve</a>
         <a href="bill.html">Bill</a>
     </nav>
-<main>
 
-</main>
+    <!-- Main content section: contains the recommendation form and result display -->
+
+    <main>
+
+        <section class="form-page">
+            <h2>Restaurant Recommendation</h2>
+            <p>Tell us what kind of dining experience you are looking for, and we will suggest a restaurant that matches your preferences.</p>
+            <form id="recommendForm">
+                <label for="diet">Dietary preference</label>
+                <select id="diet" required>
+                    <option value="Any">Any</option>
+                    <option value="Vegan">Vegan</option>
+                    <option value="Vegetarian">Vegetarian</option>
+                    <option value="Halal">Halal</option>
+                    <option value="None">None</option>
+                </select>
+                <label for="budget">Budget range</label>
+                <select id="budget" required>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+                <label for="purpose">Dining purpose</label>
+                <select id="purpose" required>
+                    <option value="Family">Family</option>
+                    <option value="Date">Date</option>
+                    <option value="Business">Business</option>
+                    <option value="Friends">Friends</option>
+                </select>
+                <button class="button" type="submit">Show Match</button>
+            </form>
+            <div id="recommendResult" class="result-box" aria-live="polite">Your recommendation will appear here.</div>
+        </section>
+    </main>
+
+    <!-- Footer section: contains copyright and closing message -->
+
     <footer>
         <p>&copy; 2026 Blossom Table. All rights reserved.</p>
         <p>Hope you find your perfect dining spot!</p>
