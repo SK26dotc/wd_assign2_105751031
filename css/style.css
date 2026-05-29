@@ -201,13 +201,13 @@ form {
   padding: 24px;
 }
 
-label {
+label, legend {
   display: block;
   margin-top: 13px;
   font-weight: bold;
 }
 
-select {
+input, select {
   width: 100%;
   margin-top: 5px;
   padding: 10px;
@@ -215,6 +215,29 @@ select {
   border: 2px solid #e8c7b0;
   border-radius: 12px;
   font-size: 1rem;
+}
+
+fieldset {
+  margin-top: 14px;
+  border: 2px solid #e8c7b0;
+  border-radius: 16px;
+}
+
+fieldset label {
+  display: inline-block;
+  margin-right: 16px;
+  font-weight: normal;
+}
+
+fieldset input,
+label input {
+  width: auto;
+}
+
+.error {
+  margin: 3px 0;
+  color: #a12424;
+  font-size: 0.9rem;
 }
 
 .result-box {
