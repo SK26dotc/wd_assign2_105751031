@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blossom Table | Reserve</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+    
+   <!-- Header section: displays the logo and website title -->
+
+    <header>
+        <img src="images/lillogo.jpg" alt="Blossom Table logo" class="logo">
+        <div>
+            <h1>Blossom Table</h1>
+            <p>Restaurant discovery and reservations.</p>
+        </div>
+    </header>
+    
+    <!-- Navigation section: links to all main pages and highlights the current page -->
+
+    <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="restaurants.html">Restaurants</a>
+        <a href="recommend.html">Recommend</a>
+        <a href="register.html">Register</a>
+        <a class="active" href="reservation.html">Reserve</a>
+        <a href="bill.html">Bill</a>
+    </nav>
+
+    <!-- Main content section: contains the reservation form -->
+
+    <main>
+
+    <!-- Reservation section: lets users book a table and choose a deposit method -->
+
+        <section class="form-page">
+            <h2>Make a Reservation</h2>
+            <p>Fill out the form below to reserve a table at your chosen restaurant. You can select your deposit method and provide any special requests for your dining experience.</p>
+
+            <!-- Reservation form: collects customer details, restaurant choice and booking information -->
+
+            <form id="reservationForm" method="post" action="http://mercury.swin.edu.au/it000000/cos10005/regtest.php" novalidate>
+                <label for="fullName">Full name</label>
+                <input id="fullName" name="fullName" type="text">
+                <p id="fullNameError" class="error"></p>
+                <label for="resEmail">Email address</label>
+                <input id="resEmail" name="email" type="email">
+                <p id="resEmailError" class="error"></p>
+                <label for="resPhone">Phone number</label>
+                <input id="resPhone" name="phone" type="text">
+                <p id="resPhoneError" class="error"></p>
+
+                <!-- Restaurant and booking details: collects the selected restaurant, date, time and guest number -->
+
+                <label for="restaurantSelect">Restaurant selection</label>
+                <select id="restaurantSelect" name="restaurant">
+                    <option value="moby">Moby 3143</option>
+                    <option value="flovie">Flovie Florist Cafe</option>
+                    <option value="lune">Lune Croissanterie</option>
+                    <option value="kettle">The Kettle Black</option>
+                    <option value="higher">Higher Ground</option>
+                    <option value="funghi">Funghi e Tartufo</option>
+                </select>
+
+                <label for="dateTime">Reservation date and time</label>
+                <input id="dateTime" name="dateTime" type="datetime-local">
+                <p id="dateTimeError" class="error"></p>
+                <label for="people">Number of people</label>
+                <input id="people" name="people" type="number" min="1">
+                <p id="peopleError" class="error"></p>
+                <label for="requests">Special requests</label>
+                <textarea id="requests" name="requests" rows="3"></textarea>
+
+                <!-- Deposit section: shows the deposit amount and payment method options -->
+
+                <label for="depositAmount">Deposit amount</label>
+                <input id="depositAmount" name="deposit" type="text" readonly>
+                <label for="paymentMethod">Deposit method</label>
+                <select id="paymentMethod" name="payment">
+                    <option value="">Choose</option>
+                    <option value="Voucher">Voucher</option>
+                    <option value="Online">Online payment</option>
+                </select>
+                <p id="paymentError" class="error"></p>
+
+                <!-- Voucher payment section: appears when voucher payment is selected -->
+
+                <div id="voucherBox" class="hidden">
+                    <label for="voucherCode">Voucher code</label>
+                    <input id="voucherCode" name="voucherCode" type="text" placeholder="12 digit code">
+                </div>
+
+                <!-- Card payment section: appears when online payment is selected -->
+
+                <div id="cardBox" class="hidden">
+                    <label for="cardType">Card type</label>
+                    <select id="cardType" name="cardType">
+                        <option value="Visa">Visa/Mastercard</option>
+                        <option value="Amex">Amex</option>
+                    </select>
+                    <label for="cardNumber">Credit card number</label>
+                    <input id="cardNumber" name="cardNumber" type="text">
+                    <p id="cardError" class="error"></p>
+                </div>
+
+                <!-- Billing email section: lets users copy or enter their billing email -->
+
+                <label><input id="sameEmail" type="checkbox" name="sameEmail"> Same as email address</label>
+                <label for="billingEmail">Billing email address</label>
+                <input id="billingEmail" name="billingEmail" type="email">
+                <button class="button" type="submit">Submit Reservation</button>
+
+            </form>
+        </section>
+    </main>
+    
+    <!-- Footer section: contains copyright and closing message -->
+
+    <footer>
+        <p>&copy; 2026 Blossom Table. All rights reserved.</p>
+        <p>Hope you find your perfect dining spot!</p>
+    </footer>
+
+</body>
+</html>
