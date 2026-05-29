@@ -15,10 +15,31 @@ function $(id) {
     return document.getElementById(id);
 }
 
+// Shows an error message beside a form field
+
+function showError(id, message) {
+    if ($(id)) {
+        $(id).textContent = message;
+    }
+}
+
+// Clears all old error messages before checking the form again
+
+function clearErrors() {
+    document.querySelectorAll(".error").forEach(error => error.textContent = "");
+}
+
+// Checks if the email has a valid format
+
+function isEmail(value) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+}
+
 // Runs this code only on the recommendation page
 
 if ($("recommendForm")) {
     $("recommendForm").addEventListener("submit", function(event) {
+        clearErrors();
         event.preventDefault();
 
         // Gets the choices selected by the user
@@ -53,5 +74,63 @@ if ($("recommendForm")) {
             <p>This match was chosen from your diet, budget and dining purpose.</p>
             <a class="button" href="reservationprac1.html?restaurant=${place.id}">Reserve this restaurant</a>
         `;
+    });
+}
+
+// Runs this code only on the registration page
+if ($("registerForm")) {
+    $("registerForm").addEventListener("submit", function(event) {
+        clearErrors();
+        let valid = true;
+
+        const username = $("username").value.trim();
+        const email = $("email").value.trim();
+        const phone = $("phone").value.trim();
+        const password = $("password").value;
+        const confirmPassword = $("confirmPassword").value;
+
+        if (!/^[A-Za-z0-9_]{5,}$/.test(username)) {
+            showError("usernameError", "Use 5+ letters, numbers or underscores.");
+            valid = false;
+        }
+
+        if (!isEmail(email)) {
+            showError("emailError", "Enter a valid email.");
+            valid = false;
+        }
+
+        if (!/^\d{8,15}$/.test(phone)) {
+            showError("phoneError", "Phone must be 8-15 digits.");
+            valid = false;
+        }
+
+        if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{10,}$/.test(password)) {
+            showError("passwordError", "Use 10+ characters with uppercase, lowercase, number and symbol.");
+            valid = false;
+        }
+
+        if (password !== confirmPassword) {
+            showError("confirmError", "Passwords must match.");
+            valid = false;
+        }
+
+        if (!document.querySelector("input[name='gender']:checked")) {
+            showError("genderError", "Select a gender.");
+            valid = false;
+        }
+
+        if (!document.querySelector("input[name='diet']:checked")) {
+            showError("dietError", "Select at least one dietary preference.");
+            valid = false;
+        }
+
+        if ($("country").value === "") {
+            showError("countryError", "Select a country/region.");
+            valid = false;
+        }
+
+        if (!valid) {
+            event.preventDefault();
+        }
     });
 }
