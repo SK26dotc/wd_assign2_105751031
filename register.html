@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    
+
    <!-- Header section: displays the logo and website title -->
 
     <header>
@@ -30,8 +30,70 @@
         <a href="reservation.html">Reserve</a>
         <a href="bill.html">Bill</a>
     </nav>
+
+    <!-- Main content section: contains the account registration form -->
+
     <main>
 
+    <!-- Registration section: lets users create an account for the website -->
+
+        <section class="form-page">
+            <h2>Create Account</h2>
+
+            <!-- Registration form: collects user details and dietary preferences -->
+
+            <form id="registerForm" method="post" action="http://mercury.swin.edu.au/it000000/cos10005/regtest.php" novalidate>
+                <label for="username">Username</label>
+                <input id="username" name="username" type="text">
+                <p id="usernameError" class="error"></p>
+                <label for="email">Email address</label>
+                <input id="email" name="email" type="email">
+                <p id="emailError" class="error"></p>
+                <label for="phone">Phone number</label>
+                <input id="phone" name="phone" type="text">
+                <p id="phoneError" class="error"></p>
+                <label for="password">Password</label>
+                <input id="password" name="password" type="password">
+                <p id="passwordError" class="error"></p>
+                <label for="confirmPassword">Confirm password</label>
+                <input id="confirmPassword" name="confirmPassword" type="password">
+                <p id="confirmError" class="error"></p>
+
+                <!-- Gender field section: allows the user to select one gender option -->
+
+                <fieldset>
+                    <legend>Gender</legend>
+                    <label><input type="radio" name="gender" value="Female"> Female</label>
+                    <label><input type="radio" name="gender" value="Male"> Male</label>
+                    <label><input type="radio" name="gender" value="Other"> Other</label>
+                </fieldset>
+                <p id="genderError" class="error"></p>
+
+                <!-- Dietary preferences section: allows the user to select food preferences -->
+
+                <fieldset>
+                    <legend>Dietary preferences</legend>
+                    <label><input type="checkbox" name="diet" value="Vegetarian"> Vegetarian</label>
+                    <label><input type="checkbox" name="diet" value="Vegan"> Vegan</label>
+                    <label><input type="checkbox" name="diet" value="Halal"> Halal</label>
+                    <label><input type="checkbox" name="diet" value="None"> None</label>
+                </fieldset>
+                <p id="dietError" class="error"></p>
+
+                <!-- Country selection section: allows the user to select their country/region -->
+                 
+                <label for="country">Country/Region</label>
+                <select id="country" name="country">
+                    <option value="">Choose</option>
+                    <option>Australia</option>
+                    <option>India</option>
+                    <option>Singapore</option>
+                    <option>Other</option>
+                </select>
+                <p id="countryError" class="error"></p>
+                <button class="button" type="submit">Submit</button>
+            </form>
+        </section>
     </main>
 
     <!-- Footer section: contains copyright and closing message -->
