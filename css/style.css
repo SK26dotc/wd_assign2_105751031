@@ -258,6 +258,74 @@ footer {
   text-align: center;
 }
 
+/* styling */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(255, 246, 242, 0.9), transparent 22%),
+    radial-gradient(circle at 90% 10%, rgba(236, 156, 157, 0.35), transparent 25%);
+}
+
+.note {
+  color: #7f5836;
+  font-size: 0.95rem;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  transition: 0.2s ease;
+}
+
+.restaurant-card img {
+  background: #f2cfca;
+  border: 2px solid #fff;
+}
+
+form {
+  background: linear-gradient(180deg, #fff6f2, #fffaf8);
+}
+
+/* Tablet */
+@media (max-width: 1023px) {
+  .intro-section, .two {
+    grid-template-columns: 1fr;
+  }
+
+  .three {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav {
+    position: static;
+  }
+
+  .three {
+    grid-template-columns: 1fr;
+  }
+
+  main {
+    padding: 14px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+
+
 
 
 

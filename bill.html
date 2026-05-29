@@ -9,6 +9,9 @@
 </head>
 
 <body>
+
+    <!-- Header section: displays the logo and website title -->
+
     <header>
         <img src="images/lillogo.jpg" alt="Blossom Table logo" class="logo">
         <div>
@@ -16,6 +19,9 @@
             <p>Restaurant discovery and reservations.</p>
         </div>
     </header>
+
+    <!-- Navigation section: links to all main pages and highlights the current page -->
+
     <nav aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="restaurants.html">Restaurants</a>
@@ -24,12 +30,22 @@
         <a href="reservation.html">Reserve</a>
         <a class="active" href="bill.html">Bill</a>
     </nav>
+
+    <!-- Main content section: contains the estimated bill calculator -->
+
     <main>
+
+    <!-- Bill calculator section: lets users estimate the total dining cost -->
+
         <section class="form-page">
             <h2>Estimated Bill Calculator</h2>
             <p>This optional page estimates the bill using restaurant average price, guests, desserts and drinks.</p>
+
+            <!-- Bill form: collects restaurant, guest, dessert and drink choices -->
+
             <form id="billForm">
-                <label for="billRestaurant">Restaurant</label><select id="billRestaurant">
+                <label for="billRestaurant">Restaurant</label>
+                <select id="billRestaurant">
                     <option value="moby">Moby 3143</option>
                     <option value="flovie">Flovie Florist Cafe</option>
                     <option value="lune">Lune Croissanterie</option>
@@ -40,11 +56,16 @@
                 <label for="billGuests">Guests</label><input id="billGuests" type="number" min="1" value="2">
                 <label for="dessertCount">Desserts ($9 each)</label><input id="dessertCount" type="number" min="0" value="0">
                 <label for="drinkCount">Drinks ($6 each)</label><input id="drinkCount" type="number" min="0" value="0">
+
+                <!-- Bill result section: displays the estimated total cost -->
+
                 <p id="billResult" class="result-box">Estimated total will appear here.</p>
             </form>
         </section>
     </main>
 
+    <!-- Footer section: contains copyright and closing message -->
+     
     <footer>
         <p>&copy; 2024 Blossom Table. All rights reserved.</p>
         <p>Hope you find a good dining spot!</p>
