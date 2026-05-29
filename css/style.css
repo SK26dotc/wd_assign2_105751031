@@ -13,10 +13,13 @@ body {
   line-height: 1.6;
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
   font-family: Georgia, serif;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.4rem;
 }
 
 /* Header and navigation */
@@ -62,8 +65,7 @@ nav a {
   border-radius: 20px;
 }
 
-nav a:hover,
-nav a.active {
+nav a:hover, nav a.active {
   background: #ec9c9d;
   color: #443025;
 }
@@ -148,6 +150,10 @@ main {
   grid-template-columns: repeat(3, 1fr);
 }
 
+.two {
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .card {
   padding: 18px;
 }
@@ -155,6 +161,34 @@ main {
 .card h3 {
   margin-bottom: 6px;
   color: #7f5836;
+}
+
+.restaurant-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.restaurant-card::before {
+  content: "✿";
+  position: absolute;
+  top: 8px;
+  right: 18px;
+  color: #ec9c9d;
+  font-size: 2rem;
+}
+
+.price-line {
+  color: #443025;
+  font-weight: bold;
+}
+
+.tag {
+  display: inline-block;
+  margin: 3px;
+  padding: 5px 10px;
+  background: #f2cfca;
+  border-radius: 15px;
+  font-size: 0.9rem;
 }
 
 /* Footer */
